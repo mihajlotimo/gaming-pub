@@ -1,0 +1,44 @@
+.header {
+  height: 34vw;
+  margin: 30px auto;
+  background: url("../../assets/gaming2.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 30px;
+}
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+}
+.header-contents h2 {
+  font-weight: 500;
+  color: #bfbfbf;
+  font-size: max(4.5vw, 22px);
+}
+.header-contents p {
+  color: #bfbfbf;
+  font-size: 1vw;
+}
+.header-contents button {
+  border: none;
+  color: #bfbfbf;
+  background-color: #0d0d0d;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+.header-contents button:hover {
+  color: #00e5ff;
+  background-color: black;
+}
