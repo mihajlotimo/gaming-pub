@@ -1,0 +1,14 @@
+.setup-display {
+  margin-top: 30px;
+}
+.setup-display h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+  color: #bfbfbf;
+}
+.setup-display-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}

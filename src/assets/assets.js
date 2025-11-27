@@ -9,6 +9,9 @@ import game_6 from "./game_6.jpg";
 import facebook_icon from "./facebook.png";
 import instagram_icon from "./instagram.png";
 import linkedin_icon from "./linkedin.png";
+import setup_1 from "./setup_1.jpg";
+import setup_2 from "./setup_2.jpg";
+import setup_3 from "./setup_3.jpg";
 
 export const assets = {
   person,
@@ -60,5 +63,29 @@ export const game_list = [
     image: game_6,
     description:
       "Najpoznatija igra gde strategija, timski rad i pravi izbor heroja odlučuju ishod borbe.",
+  },
+];
+
+export const setup_list = [
+  {
+    _id: "1",
+    name: "PC Računari",
+    image: setup_1,
+    description:
+      "Profesionalni gejming PC računari sa brzim monitorima, udobnim perifernim uređajima i stabilnom mrežnom vezom.",
+  },
+  {
+    _id: "2",
+    name: "PlayStation",
+    image: setup_2,
+    description:
+      "PlayStation gejming zona sa velikim ekranima i udobnim sedenjem, savršena za sportske igre, trke i multiplayer zabavu.",
+  },
+  {
+    _id: "3",
+    name: "Moto Simulator (Gaming stolica)",
+    image: setup_3,
+    description:
+      "Realistična moto sim-racing stolica sa upravljačima i pedalama, dizajnirana da pruži potpuno uranjajuće iskustvo vožnje.",
   },
 ];

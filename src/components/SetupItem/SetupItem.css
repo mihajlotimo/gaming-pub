@@ -1,0 +1,42 @@
+.setup-item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
+  color: #bfbfbf;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+}
+.setup-btn {
+  margin-top: 16px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  letter-spacing: 1px;
+  background-color: #bfbfbf;
+  color: #0d0d0d;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 12px;
+}
+.setup-btn:hover {
+  background-color: #0d0d0d;
+  color: #00e5ff;
+}
+.setup-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+.setup-desc {
+  font-size: 12px;
+}
+.setup-item-containter {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}
