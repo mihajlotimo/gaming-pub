@@ -1,14 +1,14 @@
 import React from "react";
-import "./PopularGames.css";
+import "./Games.css";
 import { game_list } from "../../assets/assets";
-import GameItem from "../GameItem/GameItem";
+import GameItem from "../../components/GameItem/GameItem";
 
-const PopularGames = () => {
+const Games = () => {
   return (
     <div className="games-display">
-      <h2>Popularne igre</h2>
+      {/*<h2>Popularne igre</h2>*/}
       <div className="games-display-list">
-        {game_list.slice(0, 6).map((item, index) => {
+        {game_list.map((item, index) => {
           return (
             <GameItem
               key={index}
@@ -24,4 +24,4 @@ const PopularGames = () => {
   );
 };
 
-export default PopularGames;
+export default Games;

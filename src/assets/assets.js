@@ -92,3 +92,33 @@ export const setup_list = [
     price: 800,
   },
 ];
+
+export const price_list = [
+  {
+    name: "PC Računari",
+    basePrice: 300,
+    promotions: [
+      { duration: "3 sata", price: 800 },
+      { duration: "5 sati", price: 1200 },
+      { duration: "Ceo dan", price: 1800 },
+    ],
+  },
+  {
+    name: "PlayStation",
+    basePrice: 500,
+    promotions: [
+      { duration: "3 sata", price: 1350 },
+      { duration: "5 sati", price: 2000 },
+      { duration: "Ceo dan", price: 2800 },
+    ],
+  },
+  {
+    name: "Moto Simulator (Gaming stolica)",
+    basePrice: 800,
+    promotions: [
+      { duration: "3 sata", price: 2100 },
+      { duration: "5 sati", price: 3300 },
+      { duration: "Ceo dan", price: 4500 },
+    ],
+  },
+];

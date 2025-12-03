@@ -22,7 +22,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/"
+            to="/igre"
             onClick={() => setMenu("igre")}
             className={menu === "igre" ? "active" : ""}
           >
@@ -31,7 +31,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/"
+            to="/rezervacija"
             onClick={() => setMenu("rezervacija")}
             className={menu === "rezervacija" ? "active" : ""}
           >
@@ -40,7 +40,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/"
+            to="/cene"
             onClick={() => setMenu("cene")}
             className={menu === "cene" ? "active" : ""}
           >
@@ -49,7 +49,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/about"
+            to="/onama"
             onClick={() => setMenu("onama")}
             className={menu === "onama" ? "active" : ""}
           >

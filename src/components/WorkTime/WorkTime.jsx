@@ -1,11 +1,14 @@
 import React from "react";
 import "./WorkTime.css";
 
-const WorkTime = () => {
+const WorkTime = ({ centrirano }) => {
   return (
     <div className="worktime">
-      <h2>Radno Vreme</h2>
-      <div className="worktime-container">
+      <h2 style={centrirano && { textAlign: "center" }}>Radno Vreme</h2>
+      <div
+        className="worktime-container"
+        style={centrirano && { margin: "30px auto 0" }}
+      >
         <div className="time">
           <span>Ponedeljak - Petak: </span>
           <span>12:00 - 22:00</span>

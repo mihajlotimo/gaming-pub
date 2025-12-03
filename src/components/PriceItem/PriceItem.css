@@ -1,0 +1,42 @@
+.price-card {
+  background-color: #0f0f0f;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #bfbfbf;
+  transition: 0.5s;
+}
+.price-card h2 {
+  margin-bottom: 10px;
+}
+.base-price span,
+.price-card li span {
+  color: #00e6ff;
+}
+
+.price-card li {
+  list-style: none;
+}
+.price-card:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+.price-card button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #00e5ff;
+  letter-spacing: 1px;
+  background-color: #0d0d0d;
+  color: #00e5ff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 12px;
+  box-shadow: 0 0 8px #00e5ff55;
+}
+.price-card button:hover {
+  box-shadow: 0 0 18px #00e5ffcc;
+  transform: translateY(-2px);
+}

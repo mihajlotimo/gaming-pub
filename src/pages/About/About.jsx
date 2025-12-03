@@ -3,12 +3,14 @@ import "./About.css";
 import AboutHero from "../../components/AboutHero/AboutHero";
 import WhyUs from "../../components/WhyUs/WhyUs";
 import CallToAction from "../../components/CallToAction/CallToAction";
+import WorkTime from "../../components/WorkTime/WorkTime";
 
 const About = () => {
   return (
     <div>
       <AboutHero />
       <WhyUs />
+      <WorkTime centrirano={1} />
       <CallToAction />
     </div>
   );
