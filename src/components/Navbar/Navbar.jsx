@@ -3,8 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
-const Navbar = () => {
-  const [menu, setMenu] = useState("pocetna");
+const Navbar = ({ menu, setMenu, setLoginShow }) => {
   return (
     <div className="navbar">
       <Link to="/" className="logo-tekst">
@@ -60,7 +59,7 @@ const Navbar = () => {
       <div className="navbar-right">
         <Link>
           {/*<img src={assets.person} alt="" className="profile-icon" />*/}
-          <button>Registruj se</button>
+          <button onClick={() => setLoginShow(true)}>Registruj se</button>
         </Link>
       </div>
     </div>

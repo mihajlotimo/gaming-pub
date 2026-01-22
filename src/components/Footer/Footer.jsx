@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = ({ menu, setMenu }) => {
   return (
     <div className="footer">
       <div className="footer-content">
@@ -28,11 +28,51 @@ const Footer = () => {
         <div className="footer-content-center">
           <h2>Gaming Pub</h2>
           <ul>
-            <li>Početna</li>
-            <li>Igre</li>
-            <li>Rezervacija</li>
-            <li>Cene</li>
-            <li>O nama</li>
+            <li>
+              <Link
+                to="/"
+                onClick={() => setMenu("pocetna")}
+                className={menu === "pocetna" ? "active-footer" : ""}
+              >
+                Pocetna
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/igre"
+                onClick={() => setMenu("igre")}
+                className={menu === "igre" ? "active-footer" : ""}
+              >
+                Igre
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/rezervacija"
+                onClick={() => setMenu("rezervacija")}
+                className={menu === "rezervacija" ? "active-footer" : ""}
+              >
+                Rezervacija
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/cene"
+                onClick={() => setMenu("cene")}
+                className={menu === "cene" ? "active-footer" : ""}
+              >
+                Cene
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/onama"
+                onClick={() => setMenu("onama")}
+                className={menu === "onama" ? "active-footer" : ""}
+              >
+                O nama
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="footer-content-right">

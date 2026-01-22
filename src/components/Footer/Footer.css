@@ -49,3 +49,7 @@
   text-shadow: 0 0 12px #00e5ff;
   font-size: 24px;
 }
+.active-footer {
+  color: #00e5ff !important;
+  text-shadow: 0 0 12px #00e5ff;
+}
