@@ -1,0 +1,62 @@
+.selection-setup-item {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin: auto;
+  padding: 20px 10px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+.selection-setup-item:last-child {
+  border-bottom: none;
+}
+
+.setup-image {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+.selection-setup-item-info {
+  display: flex;
+  gap: 16px;
+}
+.arrow {
+  width: 64px;
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+.setup-name {
+  color: #bfbfbf;
+  font-size: 16px;
+}
+.setup-desc {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 400px;
+  transition: transform 0.3s ease;
+}
+.setup-description {
+  color: #a1a1a1;
+  font-size: 12px;
+}
+.selection-setup-item:hover .arrow {
+  transform: translateX(10px);
+}
+.selection-setup-item:hover .setup-image {
+  transform: scale(1.05);
+}
+.selection-setup-item:hover .setup-desc {
+  transform: scale(1.02);
+}
+.selection-setup-item:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+}

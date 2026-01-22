@@ -14,6 +14,7 @@ import setup_2 from "./setup_2.jpg";
 import setup_3 from "./setup_3.jpg";
 import hide from "./hide.png";
 import show from "./eye.png";
+import arrow from "./chevron.png";
 
 export const assets = {
   person,
@@ -23,6 +24,7 @@ export const assets = {
   linkedin_icon,
   hide,
   show,
+  arrow,
 };
 
 export const game_list = [

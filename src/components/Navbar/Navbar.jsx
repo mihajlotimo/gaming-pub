@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
 const Navbar = ({ menu, setMenu, setLoginShow }) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname === "/") setMenu("pocetna");
+    else if (pathname === "/igre") setMenu("igre");
+    else if (pathname === "/rezervacija") setMenu("rezervacija");
+    else if (pathname === "/cene") setMenu("cene");
+    else if (pathname === "/onama") setMenu("onama");
+  }, [pathname]);
   return (
     <div className="navbar">
       <Link to="/" className="logo-tekst">
@@ -11,47 +20,30 @@ const Navbar = ({ menu, setMenu, setLoginShow }) => {
       </Link>
       <ul className="navbar-menu">
         <li>
-          <Link
-            to="/"
-            onClick={() => setMenu("pocetna")}
-            className={menu === "pocetna" ? "active" : ""}
-          >
+          <Link to="/" className={menu === "pocetna" ? "active" : ""}>
             Pocetna
           </Link>
         </li>
         <li>
-          <Link
-            to="/igre"
-            onClick={() => setMenu("igre")}
-            className={menu === "igre" ? "active" : ""}
-          >
+          <Link to="/igre" className={menu === "igre" ? "active" : ""}>
             Igre
           </Link>
         </li>
         <li>
           <Link
             to="/rezervacija"
-            onClick={() => setMenu("rezervacija")}
             className={menu === "rezervacija" ? "active" : ""}
           >
             Rezervacija
           </Link>
         </li>
         <li>
-          <Link
-            to="/cene"
-            onClick={() => setMenu("cene")}
-            className={menu === "cene" ? "active" : ""}
-          >
+          <Link to="/cene" className={menu === "cene" ? "active" : ""}>
             Cene
           </Link>
         </li>
         <li>
-          <Link
-            to="/onama"
-            onClick={() => setMenu("onama")}
-            className={menu === "onama" ? "active" : ""}
-          >
+          <Link to="/onama" className={menu === "onama" ? "active" : ""}>
             O nama
           </Link>
         </li>

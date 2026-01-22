@@ -1,0 +1,70 @@
+.selection-date {
+  width: 500px;
+  margin: auto;
+  margin-top: 30px;
+}
+.calendar {
+  color: #bfbfbf;
+}
+.booking-calendar {
+  background-color: transparent;
+}
+.react-calendar__tile {
+  background: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  color: #bfbfbf;
+  border: none;
+  text-align: center;
+
+  transition: 0.2s;
+}
+.react-calendar__tile:enabled {
+  cursor: pointer;
+}
+.react-calendar__tile:disabled {
+  color: rgba(255, 255, 255, 0.2);
+}
+.react-calendar__tile:enabled:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.react-calendar__tile--now {
+  border: 1px solid #00e5ff;
+}
+.react-calendar__tile--active {
+  background-color: #00e5ff;
+  color: black;
+  font-weight: bold;
+}
+.react-calendar__month-view__weekdays {
+  font-size: 14px;
+  color: #bfbfbf;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+}
+.react-calendar__navigation {
+  display: flex;
+  margin-bottom: 10px;
+}
+.react-calendar__navigation button {
+  background-color: transparent;
+  border: none;
+  color: #bfbfbf;
+}
+.react-calendar__navigation__prev-button,
+.react-calendar__navigation__next-button {
+  font-size: 24px;
+  cursor: pointer;
+}
+.react-calendar__navigation__prev-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.react-calendar__navigation__next-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

@@ -4,7 +4,7 @@ import PopularGames from "../../components/PopularGames/PopularGames";
 import Setup from "../../components/Setup/Setup";
 import WorkTime from "../../components/WorkTime/WorkTime";
 
-const Home = () => {
+const Home = ({ setMenu }) => {
   return (
     <div>
       <Header />

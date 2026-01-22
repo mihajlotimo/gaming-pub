@@ -36,6 +36,7 @@
 .footer-social-icons img {
   width: 40px;
   margin-right: 15px;
+  cursor: pointer;
 }
 .footer hr {
   width: 100%;

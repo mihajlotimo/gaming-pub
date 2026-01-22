@@ -3,7 +3,7 @@ import "./Setup.css";
 import { setup_list } from "../../assets/assets";
 import SetupItem from "../SetupItem/SetupItem";
 
-const Setup = () => {
+const Setup = ({ setMenu }) => {
   return (
     <div className="setup-display">
       <h2>Naša oprema</h2>

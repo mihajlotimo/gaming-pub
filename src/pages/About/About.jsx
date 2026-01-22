@@ -5,7 +5,7 @@ import WhyUs from "../../components/WhyUs/WhyUs";
 import CallToAction from "../../components/CallToAction/CallToAction";
 import WorkTime from "../../components/WorkTime/WorkTime";
 
-const About = () => {
+const About = ({ setMenu }) => {
   return (
     <div>
       <AboutHero />

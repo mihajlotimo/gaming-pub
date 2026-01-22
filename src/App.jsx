@@ -24,11 +24,11 @@ const App = () => {
         />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setMenu={setMenu} />} />
           <Route path="/igre" element={<Games />} />
           <Route path="/rezervacija" element={<Reservation />} />
-          <Route path="/cene" element={<Prices />} />
-          <Route path="/onama" element={<About />} />
+          <Route path="/cene" element={<Prices setMenu={setMenu} />} />
+          <Route path="/onama" element={<About setMenu={setMenu} />} />
         </Routes>
       </div>
       <Footer menu={menu} setMenu={setMenu} />

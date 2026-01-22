@@ -1,7 +1,9 @@
 import React from "react";
 import "./PriceItem.css";
+import { useNavigate } from "react-router-dom";
 
 const PriceItem = ({ name, basePrice, promotions }) => {
+  const navigate = useNavigate();
   return (
     <div className="price-card">
       <h2>{name}</h2>
@@ -18,7 +20,13 @@ const PriceItem = ({ name, basePrice, promotions }) => {
           );
         })}
       </ul>
-      <button>Rezerviši</button>
+      <button
+        onClick={() => {
+          navigate("/rezervacija");
+        }}
+      >
+        Rezerviši
+      </button>
     </div>
   );
 };

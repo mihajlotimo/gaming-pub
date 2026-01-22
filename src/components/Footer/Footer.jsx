@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import "./Footer.css";
 
-const Footer = ({ menu, setMenu }) => {
+const Footer = ({ menu }) => {
   return (
     <div className="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <Link to="/" className="logo-tekst">
+          <Link
+            to="/"
+            className="logo-tekst"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             Avram35
           </Link>
           <p>
@@ -31,7 +37,9 @@ const Footer = ({ menu, setMenu }) => {
             <li>
               <Link
                 to="/"
-                onClick={() => setMenu("pocetna")}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
                 className={menu === "pocetna" ? "active-footer" : ""}
               >
                 Pocetna
@@ -40,7 +48,6 @@ const Footer = ({ menu, setMenu }) => {
             <li>
               <Link
                 to="/igre"
-                onClick={() => setMenu("igre")}
                 className={menu === "igre" ? "active-footer" : ""}
               >
                 Igre
@@ -49,7 +56,6 @@ const Footer = ({ menu, setMenu }) => {
             <li>
               <Link
                 to="/rezervacija"
-                onClick={() => setMenu("rezervacija")}
                 className={menu === "rezervacija" ? "active-footer" : ""}
               >
                 Rezervacija
@@ -58,7 +64,6 @@ const Footer = ({ menu, setMenu }) => {
             <li>
               <Link
                 to="/cene"
-                onClick={() => setMenu("cene")}
                 className={menu === "cene" ? "active-footer" : ""}
               >
                 Cene
@@ -67,7 +72,6 @@ const Footer = ({ menu, setMenu }) => {
             <li>
               <Link
                 to="/onama"
-                onClick={() => setMenu("onama")}
                 className={menu === "onama" ? "active-footer" : ""}
               >
                 O nama
