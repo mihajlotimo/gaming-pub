@@ -68,3 +68,13 @@
   opacity: 0.5;
   cursor: default;
 }
+@media (max-width: 768px) {
+  .selection-date {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .react-calendar__tile {
+    padding: 5px 0;
+  }
+}

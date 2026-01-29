@@ -8,6 +8,8 @@ import show from "./eye.png";
 import arrow from "./chevron.png";
 import more from "./more.png";
 import close from "./close.png";
+import user from "./user.png";
+import down from "./down.png";
 
 export const assets = {
   person,
@@ -20,5 +22,6 @@ export const assets = {
   arrow,
   more,
   close,
+  user,
+  down,
 };
-

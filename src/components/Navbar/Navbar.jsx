@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
-const Navbar = ({ menu, setMenu, setLoginShow }) => {
+const Navbar = ({ menu, setMenu, setLoginShow, user, setUser }) => {
   const { pathname } = useLocation();
 
   const [openMenu, setOpenMenu] = useState(false);
+
+  const [openDrop, setOpenDrop] = useState(false);
+
+  const navigate = useNavigate(null);
 
   useEffect(() => {
     if (pathname === "/") setMenu("pocetna");
@@ -52,12 +56,63 @@ const Navbar = ({ menu, setMenu, setLoginShow }) => {
               O nama
             </Link>
           </li>
+          {openMenu && (
+            <li>
+              {user ? (
+                <div
+                  className="user-dropdown"
+                  onClick={() => {
+                    if (window.innerWidth <= 768) {
+                      setOpenDrop((prev) => !prev);
+                    }
+                  }}
+                >
+                  <div className="user-logged">
+                    <img src={assets.user} alt="" className="user-logged-img" />
+                    <span className="user-logged-username">
+                      {user.username}
+                    </span>
+                    <img
+                      src={assets.down}
+                      alt=""
+                      className={`user-down-img ${openDrop ? "open" : ""}`}
+                    />
+                  </div>
+                  <div
+                    className={`user-dropdown-menu ${openDrop ? "open" : ""}`}
+                  >
+                    <span>Uredi profil</span>
+                    <span>Vidi rezervacije</span>
+                    <span
+                      onClick={() => {
+                        localStorage.removeItem("user");
+                        setUser(null);
+                        setOpenMenu(false);
+                        navigate("/");
+                      }}
+                    >
+                      Odjavi se
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  className="navbar-button"
+                  onClick={() => setLoginShow(true)}
+                >
+                  Registruj se
+                </button>
+              )}
+            </li>
+          )}
         </ul>
         {openMenu ? (
           <img
             src={assets.close}
             alt=""
-            onClick={() => setOpenMenu(false)}
+            onClick={() => {
+              (setOpenMenu(false), setOpenDrop(false));
+            }}
             className="close-icon"
           />
         ) : (
@@ -70,10 +125,38 @@ const Navbar = ({ menu, setMenu, setLoginShow }) => {
         )}
 
         <div className="navbar-right">
-          <Link>
-            {/*<img src={assets.person} alt="" className="profile-icon" />*/}
-            <button onClick={() => setLoginShow(true)}>Registruj se</button>
-          </Link>
+          {/*<img src={assets.person} alt="" className="profile-icon" />*/}
+          {user ? (
+            <div className="user-dropdown">
+              <div className="user-logged">
+                <img src={assets.user} alt="" className="user-logged-img" />
+                <span className="user-logged-username">{user.username}</span>
+                <img src={assets.down} alt="" className={`user-down-img`} />
+              </div>
+              <div className={`user-dropdown-menu`}>
+                <span>Uredi profil</span>
+                <span>Vidi rezervacije</span>
+                <span
+                  onClick={() => {
+                    localStorage.removeItem("user");
+                    setUser(null);
+
+                    setOpenDrop(false);
+                    navigate("/");
+                  }}
+                >
+                  Odjavi se
+                </span>
+              </div>
+            </div>
+          ) : (
+            <button
+              className="navbar-button"
+              onClick={() => setLoginShow(true)}
+            >
+              Registruj se
+            </button>
+          )}
         </div>
       </div>
     </div>

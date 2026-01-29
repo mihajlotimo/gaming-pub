@@ -33,7 +33,7 @@
 }
 .setup-name {
   color: #bfbfbf;
-  font-size: 16px;
+  font-size: 18px;
 }
 .setup-desc {
   padding: 20px;
@@ -45,7 +45,7 @@
 }
 .setup-description {
   color: #a1a1a1;
-  font-size: 12px;
+  font-size: 13px;
 }
 .selection-setup-item:hover .arrow {
   transform: translateX(10px);
@@ -68,20 +68,19 @@
   }
   .setup-name {
     color: #bfbfbf;
-    font-size: 20px;
+    font-size: 16px;
   }
   .setup-description {
     color: #a1a1a1;
-    font-size: 16px;
+    font-size: 12px;
   }
-  .setup-desc {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1;
-  }
+
   .arrow {
     width: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .setup-description {
+    display: none;
   }
 }

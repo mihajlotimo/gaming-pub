@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home.jsx";
 import About from "./pages/About/About.jsx";
@@ -13,6 +13,13 @@ import Login from "./components/Login/Login.jsx";
 const App = () => {
   const [menu, setMenu] = useState("pocetna");
   const [loginShow, setLoginShow] = useState(false);
+  const [user, setUser] = useState(() => {
+    const storedUser = localStorage.getItem("user");
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
   return (
     <>
       <div className="app">
@@ -21,6 +28,8 @@ const App = () => {
           setMenu={setMenu}
           loginShow={loginShow}
           setLoginShow={setLoginShow}
+          user={user}
+          setUser={setUser}
         />
         <ScrollToTop />
         <Routes>
@@ -32,7 +41,13 @@ const App = () => {
         </Routes>
       </div>
       <Footer menu={menu} setMenu={setMenu} />
-      {loginShow && <Login setLoginShow={setLoginShow} loginShow={loginShow} />}
+      {loginShow && (
+        <Login
+          setLoginShow={setLoginShow}
+          loginShow={loginShow}
+          setUser={setUser}
+        />
+      )}
     </>
   );
 };

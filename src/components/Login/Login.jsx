@@ -17,7 +17,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
     mail: "",
     username: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
     setError(""); // Clear error when user types
   };
@@ -44,7 +44,13 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
   const validateForm = () => {
     if (isRegister) {
       // Register validation
-      if (!formData.fname || !formData.lname || !formData.mail || !formData.username || !formData.password) {
+      if (
+        !formData.fname ||
+        !formData.lname ||
+        !formData.mail ||
+        !formData.username ||
+        !formData.password
+      ) {
         setError("Sva polja su obavezna");
         return false;
       }
@@ -77,7 +83,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -88,18 +94,18 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
     try {
       if (isRegister) {
         // Register
-        const response = await fetch('http://localhost:3000/users', {
-          method: 'POST',
+        const response = await fetch("http://localhost:3000/users", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             username: formData.username,
             fname: formData.fname,
             lname: formData.lname,
             mail: formData.mail,
-            password: formData.password
-          })
+            password: formData.password,
+          }),
         });
 
         const data = await response.json();
@@ -114,7 +120,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
             mail: "",
             username: formData.username,
             password: formData.password,
-            confirmPassword: ""
+            confirmPassword: "",
           });
           alert("Uspešno ste se registrovali! Možete se prijaviti.");
         } else {
@@ -122,24 +128,24 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
         }
       } else {
         // Login
-        const ismail = formData.username.includes('@');
-        
-        const response = await fetch('http://localhost:3000/login', {
-          method: 'POST',
+        const ismail = formData.username.includes("@");
+
+        const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            [ismail ? 'mail' : 'username']: formData.username,
-            password: formData.password
-          })
+            [ismail ? "mail" : "username"]: formData.username,
+            password: formData.password,
+          }),
         });
 
         const data = await response.json();
 
         if (response.ok) {
           // Login successful
-          localStorage.setItem('user', JSON.stringify(data));
+          localStorage.setItem("user", JSON.stringify(data));
           if (setUser) {
             setUser(data);
           }
@@ -150,7 +156,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
             mail: "",
             username: "",
             password: "",
-            confirmPassword: ""
+            confirmPassword: "",
           });
         } else {
           setError(data.error || "Netačni podaci za prijavu");
@@ -173,13 +179,13 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
 
         {error && <div className="error-message">{error}</div>}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-form">
           {isRegister && (
             <div className="login-input">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="fname"
-                placeholder="Ime" 
+                placeholder="Ime"
                 value={formData.fname}
                 onChange={handleChange}
                 disabled={loading}
@@ -188,10 +194,10 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
           )}
           {isRegister && (
             <div className="login-input">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="lname"
-                placeholder="Prezime" 
+                placeholder="Prezime"
                 value={formData.lname}
                 onChange={handleChange}
                 disabled={loading}
@@ -200,10 +206,10 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
           )}
           {isRegister && (
             <div className="login-input">
-              <input 
-                type="mail" 
+              <input
+                type="mail"
                 name="mail"
-                placeholder="mail" 
+                placeholder="mail"
                 value={formData.mail}
                 onChange={handleChange}
                 disabled={loading}
@@ -216,7 +222,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
               type="text"
               name="username"
               placeholder={
-                isRegister ? "Korisničko ime" : "mail ili Korisničko ime"
+                isRegister ? "Korisničko ime" : "Email ili Korisničko ime"
               }
               value={formData.username}
               onChange={handleChange}
@@ -257,10 +263,13 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
           )}
 
           <button type="submit" className="login-button" disabled={loading}>
-            {loading 
-              ? (isRegister ? "Registracija..." : "Prijava...") 
-              : (isRegister ? "Registruj se" : "Prijavi se")
-            }
+            {loading
+              ? isRegister
+                ? "Registracija..."
+                : "Prijava..."
+              : isRegister
+                ? "Registruj se"
+                : "Prijavi se"}
           </button>
         </form>
 
@@ -277,7 +286,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
                 mail: "",
                 username: "",
                 password: "",
-                confirmPassword: ""
+                confirmPassword: "",
               });
             }}
           >

@@ -39,26 +39,29 @@
 }
 @media (max-width: 768px) {
   .call-to-action h2 {
-    font-size: 32px;
+    font-size: 24px;
+  }
+  .call-to-action p {
+    font-size: 14px;
   }
   .call-to-action {
     padding: 80px 40px;
     text-align: center;
   }
   .call-to-action button {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media (max-width: 480px) {
   .call-to-action h2 {
-    font-size: 36px;
+    font-size: 22px;
   }
   .call-to-action p {
-    font-size: 18px;
+    font-size: 12px;
   }
   .call-to-action button {
-    font-size: 16px;
-    padding: 15px 30px;
+    font-size: 11px;
+    padding: 10px 20px;
     border-radius: 30px;
   }
 }

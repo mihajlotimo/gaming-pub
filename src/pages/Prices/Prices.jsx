@@ -10,7 +10,7 @@ const Prices = ({ setMenu }) => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await fetch('http://localhost:3000/promotions');
+        const response = await fetch("http://localhost:3000/promotions");
         const data = await response.json();
         setPrices(data);
         setLoading(false);

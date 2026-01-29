@@ -52,11 +52,11 @@
 }
 @media (max-width: 768px) {
   .setup-item-name {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
   }
 
   .setup-item-description {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

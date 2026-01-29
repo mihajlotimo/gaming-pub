@@ -7,7 +7,7 @@ import WorkTime from "../../components/WorkTime/WorkTime";
 
 const About = ({ setMenu }) => {
   return (
-    <div>
+    <div className="about-page">
       <AboutHero />
       <WhyUs />
       <WorkTime centrirano={1} />

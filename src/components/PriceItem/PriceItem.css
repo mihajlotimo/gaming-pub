@@ -75,43 +75,46 @@
 
 @media (max-width: 768px) {
   .price-card h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
   .base-price {
-    font-size: 20px;
+    font-size: 18px;
   }
   .price-card h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
   .price-card ul li {
-    font-size: 18px;
+    font-size: 16px;
   }
   .price-card button {
-    font-size: 18px;
-    padding: 15px 30px;
+    font-size: 14px;
+    padding: 12px 30px;
     border-radius: 30px;
   }
   .price-card-image {
-    height: 160px;
+    max-height: 160px;
   }
 }
 
 @media (max-width: 480px) {
-  .price-card h2 {
-    font-size: 32px;
+  .price-card {
+    padding: 20px;
   }
-  .base-price {
+  .price-card h2 {
     font-size: 22px;
   }
+  .base-price {
+    font-size: 16px;
+  }
   .price-card h3 {
-    font-size: 24px;
+    font-size: 18px;
   }
   .price-card ul li {
-    font-size: 20px;
+    font-size: 14px;
   }
   .price-card button {
-    font-size: 18px;
-    padding: 15px 30px;
+    font-size: 12px;
+    padding: 10px 20px;
     border-radius: 30px;
   }
   .price-card-image {
