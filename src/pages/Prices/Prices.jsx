@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Prices.css";
 import PriceItem from "../../components/PriceItem/PriceItem";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Prices = ({ setMenu }) => {
   const [prices, setPrices] = useState([]);
@@ -10,7 +11,7 @@ const Prices = ({ setMenu }) => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await fetch("http://localhost:3000/promotions");
+        const response = await fetch(`${API_URL}/promotions`);
         const data = await response.json();
         setPrices(data);
         setLoading(false);

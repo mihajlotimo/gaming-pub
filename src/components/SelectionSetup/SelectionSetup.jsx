@@ -3,6 +3,7 @@ import "./SelectionSetup.css";
 import SelectionSetupItem from "../SelectionSetupItem/SelectionSetupItem";
 import SelectionTerm from "../SelectionTerm/SelectionTerm";
 import SelectionDate from "../SelectionDate/SelectionDate";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const SelectionSetup = () => {
   const [step, setStep] = useState(1);
@@ -14,7 +15,7 @@ const SelectionSetup = () => {
   useEffect(() => {
     const fetchSetups = async () => {
       try {
-        const response = await fetch('http://localhost:3000/setups');
+        const response = await fetch(`${API_URL}/setups`);
         const data = await response.json();
         setSetups(data);
         setLoading(false);
@@ -45,7 +46,7 @@ const SelectionSetup = () => {
                   image: setup.image,
                   description: setup.description,
                   basePrice: setup.basePrice,
-                  available: setup.available
+                  available: setup.available,
                 }}
                 setStep={setStep}
                 setSetupId={setSetupId}

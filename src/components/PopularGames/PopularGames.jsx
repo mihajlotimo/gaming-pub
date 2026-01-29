@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./PopularGames.css";
 import GameItem from "../GameItem/GameItem";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const PopularGames = () => {
   const [games, setGames] = useState([]);
@@ -10,7 +11,7 @@ const PopularGames = () => {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await fetch('http://localhost:3000/games');
+        const response = await fetch(`${API_URL}/games`);
         const data = await response.json();
         setGames(data.slice(0, 6));
         setLoading(false);

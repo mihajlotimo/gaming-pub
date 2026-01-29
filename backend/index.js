@@ -4,7 +4,9 @@ const app = express();
 const cors = require("cors");
 const path = require("path");
 const pool = require("./database");
-const port = 3000;
+//const port = 3000;
+const port = process.env.PORT || 3000;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${port}`;
 
 app.use(cors());
 app.use(express.json());
@@ -66,7 +68,7 @@ app.get("/games", async (req, res) => {
       game_id: game.game_id,
       name: game.game_name,
       image: game.image_filename
-        ? `http://localhost:3000/images/games/${game.image_filename}`
+        ? `${BASE_URL}/images/games/${game.image_filename}`
         : null,
       description: game.game_description,
     }));
@@ -101,9 +103,9 @@ app.get("/setups", async (req, res) => {
     const result = await pool.query("SELECT * FROM setups ORDER BY id");
 
     const setupImages = {
-      1: "http://localhost:3000/images/setups/setup_1.jpg",
-      2: "http://localhost:3000/images/setups/setup_2.jpg",
-      3: "http://localhost:3000/images/setups/setup_3.jpg",
+      1: `${BASE_URL}/images/setups/setup_1.jpg`,
+      2: `${BASE_URL}/images/setups/setup_2.jpg`,
+      3: `${BASE_URL}/images/setups/setup_3.jpg`,
     };
 
     const formattedSetups = result.rows.map((setup) => ({
@@ -133,9 +135,9 @@ app.get("/promotions", async (req, res) => {
         `);
 
     const setupImages = {
-      1: "http://localhost:3000/images/setups/setup_1.jpg",
-      2: "http://localhost:3000/images/setups/setup_2.jpg",
-      3: "http://localhost:3000/images/setups/setup_3.jpg",
+      1: `${BASE_URL}/images/setups/setup_1.jpg`,
+      2: `${BASE_URL}/images/setups/setup_2.jpg`,
+      3: `${BASE_URL}/images/setups/setup_3.jpg`,
     };
 
     const promotionsGrouped = {};
@@ -390,5 +392,5 @@ app.delete("/reservations/:reservationId", async (req, res) => {
   }
 });
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on ${BASE_URL}`);
 });

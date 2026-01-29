@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Login.css";
 import { assets } from "../../assets/assets";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Login = ({ setLoginShow, loginShow, setUser }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -94,7 +95,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
     try {
       if (isRegister) {
         // Register
-        const response = await fetch("http://localhost:3000/users", {
+        const response = await fetch(`${API_URL}/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -130,7 +131,7 @@ const Login = ({ setLoginShow, loginShow, setUser }) => {
         // Login
         const ismail = formData.username.includes("@");
 
-        const response = await fetch("http://localhost:3000/login", {
+        const response = await fetch(`${API_URL}/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

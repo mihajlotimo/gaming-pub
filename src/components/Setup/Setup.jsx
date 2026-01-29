@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Setup.css";
 import SetupItem from "../SetupItem/SetupItem";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Setup = ({ setMenu }) => {
   const [setups, setSetups] = useState([]);
@@ -10,7 +11,7 @@ const Setup = ({ setMenu }) => {
   useEffect(() => {
     const fetchSetups = async () => {
       try {
-        const response = await fetch('http://localhost:3000/setups');
+        const response = await fetch(`${API_URL}/setups`);
         const data = await response.json();
         setSetups(data);
         setLoading(false);

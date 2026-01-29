@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./SelectionTerm.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const SelectionTerm = ({ setupId, setStep }) => {
   const [setupInfo, setSetupInfo] = useState(null);
@@ -9,13 +10,13 @@ const SelectionTerm = ({ setupId, setStep }) => {
   useEffect(() => {
     const fetchSetups = async () => {
       try {
-        const response = await fetch('http://localhost:3000/setups');
+        const response = await fetch(`${API_URL}/setups`);
         const data = await response.json();
-        const setup = data.find(s => s.id === setupId);
+        const setup = data.find((s) => s.id === setupId);
         setSetupInfo(setup);
         setLoading(false);
       } catch (err) {
-        console.error('Error fetching setup:', err);
+        console.error("Error fetching setup:", err);
         setLoading(false);
       }
     };
