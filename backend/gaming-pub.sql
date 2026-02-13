@@ -2,10 +2,10 @@
 -- PostgreSQL database dump
 --
 
-\restrict n6QnWpIOBuJCaxu74fzJeHFuGOgVuPC6sNimfht56rafM2TwXXklxGxz0DSBQea
+\restrict XyzruTpf4a1VjN3qQeyjVCBfdqqigKV128BYJ8Pd3GpeNEb4t4VAVWu2vIuMVWP
 
 -- Dumped from database version 18.1
--- Dumped by pg_dump version 18.1
+-- Dumped by pg_dump version 18.0
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -133,8 +133,8 @@ CREATE TABLE public.reservations (
     total_price integer NOT NULL,
     status character varying(20) DEFAULT 'active'::character varying,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT reservations_device_type_check CHECK (((device_type)::text = ANY ((ARRAY['pc'::character varying, 'sony'::character varying, 'moto'::character varying])::text[]))),
-    CONSTRAINT reservations_status_check CHECK (((status)::text = ANY ((ARRAY['active'::character varying, 'completed'::character varying, 'cancelled'::character varying])::text[])))
+    CONSTRAINT reservations_device_type_check CHECK (((device_type)::text = ANY (ARRAY[('pc'::character varying)::text, ('sony'::character varying)::text, ('moto'::character varying)::text]))),
+    CONSTRAINT reservations_status_check CHECK (((status)::text = ANY (ARRAY[('active'::character varying)::text, ('completed'::character varying)::text, ('cancelled'::character varying)::text])))
 );
 
 
@@ -259,12 +259,12 @@ COPY public.descriptions (game_id, game_description) FROM stdin;
 --
 
 COPY public.games (game_id, game_name, image_filename) FROM stdin;
-1	VALORANT	game_1.jpg
-2	Counter Strike 2	game_2.jpg
-3	Fortnite	game_3.jpg
-4	EA FC 25	game_4.jpg
-5	GTA V	game_5.jpg
-6	League of Legends	game_6.jpg
+1	VALORANT	valorant.jpg
+2	Counter Strike 2	cs2.jpg
+3	Fortnite	fortnite.jpg
+5	GTA V	gta5.jpg
+6	League of Legends	lol.jpg
+4	EA FC 25	fc25.jpg
 \.
 
 
@@ -326,6 +326,9 @@ COPY public.promotions (id, setup_id, duration_hours, price) FROM stdin;
 --
 
 COPY public.reservations (reservation_id, user_id, setup_id, device_type, device_id, reservation_date, start_time, duration_hours, total_price, status, created_at) FROM stdin;
+9	1	1	pc	1	2026-02-05	12:00:00	3	1500	active	2026-02-03 15:19:34.748585
+10	1	1	pc	2	2026-02-05	15:00:00	3	1500	active	2026-02-03 15:19:34.748585
+11	1	1	pc	1	2026-02-05	18:00:00	3	1500	active	2026-02-03 15:19:34.748585
 \.
 
 
@@ -363,6 +366,8 @@ COPY public.sony (sony_id, sony_name) FROM stdin;
 --
 
 COPY public.users (user_id, username, fname, lname, password, mail) FROM stdin;
+5	kk	j	k	Avram35	m@g.c
+1	testuser	Test	User	password123	test@example.com
 \.
 
 
@@ -370,14 +375,14 @@ COPY public.users (user_id, username, fname, lname, password, mail) FROM stdin;
 -- Name: reservations_reservation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.reservations_reservation_id_seq', 8, true);
+SELECT pg_catalog.setval('public.reservations_reservation_id_seq', 11, true);
 
 
 --
 -- Name: users_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.users_user_id_seq', 4, true);
+SELECT pg_catalog.setval('public.users_user_id_seq', 5, true);
 
 
 --
@@ -515,5 +520,5 @@ ALTER TABLE ONLY public.promotions
 -- PostgreSQL database dump complete
 --
 
-\unrestrict n6QnWpIOBuJCaxu74fzJeHFuGOgVuPC6sNimfht56rafM2TwXXklxGxz0DSBQea
+\unrestrict XyzruTpf4a1VjN3qQeyjVCBfdqqigKV128BYJ8Pd3GpeNEb4t4VAVWu2vIuMVWP
 
