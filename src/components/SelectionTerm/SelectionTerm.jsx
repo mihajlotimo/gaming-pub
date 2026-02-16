@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SelectionTerm.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
-const SelectionTerm = ({ setupId, setStep }) => {
+const SelectionTerm = ({ setupId, setStep, setDuration }) => {
   const [setupInfo, setSetupInfo] = useState(null);
   const [check, setCheck] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -34,6 +34,13 @@ const SelectionTerm = ({ setupId, setStep }) => {
     { label: "ceo dan", hours: 8 },
   ];
 
+  const handleNext = () => {
+    if (check) {
+      setDuration(check);
+      setStep(3);
+    }
+  };
+
   if (loading) return <div>Loading...</div>;
   if (!setupInfo) return null;
 
@@ -61,7 +68,7 @@ const SelectionTerm = ({ setupId, setStep }) => {
             </div>
           </div>
         ))}
-        <button onClick={() => setStep(3)} className="terms-button">
+        <button onClick={handleNext} className="terms-button" disabled={!check}>
           Dalje
         </button>
       </div>

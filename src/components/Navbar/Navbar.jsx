@@ -98,8 +98,20 @@ const Navbar = ({ menu, setMenu, setLoginShow, user, setUser }) => {
                     <div
                       className={`user-dropdown-menu ${openDrop ? "open" : ""}`}
                     >
-                      <span>Uredi profil</span>
-                      <span>Vidi rezervacije</span>
+                      <span
+                        onClick={() => {
+                          (navigate("/urediprofil"), setMenu(""));
+                        }}
+                      >
+                        Uredi profil
+                      </span>
+                      <span
+                        onClick={() => {
+                          (navigate("/mojerezervacije"), setMenu(""));
+                        }}
+                      >
+                        Vidi rezervacije
+                      </span>
                       <span
                         onClick={() => {
                           setModalLogout(true);
@@ -153,8 +165,20 @@ const Navbar = ({ menu, setMenu, setLoginShow, user, setUser }) => {
                   <img src={assets.down} alt="" className={`user-down-img`} />
                 </div>
                 <div className={`user-dropdown-menu`}>
-                  <span>Uredi profil</span>
-                  <span>Vidi rezervacije</span>
+                  <span
+                    onClick={() => {
+                      (navigate("/urediprofil"), setMenu(""));
+                    }}
+                  >
+                    Uredi profil
+                  </span>
+                  <span
+                    onClick={() => {
+                      (navigate("/mojerezervacije"), setMenu(""));
+                    }}
+                  >
+                    Vidi rezervacije
+                  </span>
                   <span
                     onClick={() => {
                       setModalLogout(true);

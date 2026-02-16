@@ -1,0 +1,102 @@
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  max-width: 400px;
+}
+.edit-profile-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #bfbfbf;
+  margin-top: 20px;
+}
+.edit-input {
+  width: 100%;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.edit-input.viewing {
+  border: none;
+  padding: 5px 0px;
+}
+.edit-input span {
+  color: #bfbfbf;
+}
+.edit-info-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.change-password-span {
+  color: #bfbfbf;
+  padding-left: 15px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.change-password-btn {
+  cursor: pointer;
+  color: #00e5ff;
+}
+.edit-input:focus-within {
+  border-color: #00e5ff;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+}
+.edit-input input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #bfbfbf;
+  font-size: 15px;
+  padding: 5px 0px;
+}
+.edit-input input:focus {
+  outline: none;
+}
+.edit-input.password {
+  display: flex;
+  align-items: center;
+}
+.edit-input.password img {
+  width: 16px;
+  height: auto;
+  cursor: pointer;
+}
+.edit-button {
+  margin-top: 30px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 1px solid #00e5ff;
+  letter-spacing: 1px;
+  background-color: #0d0d0d;
+  color: #00e5ff;
+  font-weight: 500;
+  cursor: pointer;
+  max-width: 200px;
+  transition: 0.3s;
+  font-size: 15px;
+  box-shadow: 0 0 8px #00e5ff55;
+}
+.edit-button:hover {
+  box-shadow: 0 0 10px #00e5ffcc;
+  transform: translateY(-2px);
+}
+.edit-button.change-password-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px 20px;
+  font-size: 14px;
+}
+.edit-buttons-div {
+  display: flex;
+  justify-content: space-between;
+}
+.edit-passwords-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

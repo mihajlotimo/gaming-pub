@@ -1,13 +1,4 @@
-.selection-setup-title {
-  color: #bfbfbf;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-weight: 300;
-  font-style: italic;
-  font-size: 24px;
-}
-.reservation-confirmation {
+.title-reservations {
   color: #bfbfbf;
   text-align: center;
   margin-top: 20px;
@@ -16,9 +7,37 @@
   font-style: italic;
   font-size: 24px;
 }
-.btn-review-reservations {
+.no-reservations {
+  color: #bfbfbf;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 20px;
+}
+.reservations-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  max-width: 1400px;
+  align-items: center;
+  justify-content: center;
+}
+.reservation-item {
+  color: #bfbfbf;
+  /* border: 1px solid #00e5ff;*/
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+.btn-cancel {
   display: block;
-  margin: auto;
   margin-top: 20px;
   cursor: pointer;
   padding: 10px 30px;
@@ -32,7 +51,7 @@
   font-size: 12px;
   box-shadow: 0 0 8px #00e5ff55;
 }
-.btn-review-reservations:hover {
+.btn-cancel:hover {
   box-shadow: 0 0 10px #00e5ffcc;
   transform: translateY(-2px);
 }

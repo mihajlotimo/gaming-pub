@@ -1,10 +1,12 @@
 .selection-date {
-  width: 500px;
+  width: 100%;
   margin: auto;
   margin-top: 30px;
 }
 .calendar {
   color: #bfbfbf;
+  max-width: 500px;
+  margin: auto;
 }
 .booking-calendar {
   background-color: transparent;
@@ -67,6 +69,76 @@
 .react-calendar__navigation__next-button:disabled {
   opacity: 0.5;
   cursor: default;
+}
+.slots-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin: auto;
+  max-width: 800px;
+  margin-top: 20px;
+}
+.available-slots h3 {
+  text-align: center;
+  color: #bfbfbf;
+  margin-top: 30px;
+  font-weight: 200;
+}
+.slot-item {
+  border: 1px solid #00e5ff;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  color: #bfbfbf;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.slot-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.availability {
+  font-size: 13px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+.time {
+  margin: 0;
+}
+.slot-item.selected,
+.slot-item.selected:hover {
+  background-color: #00e5ff;
+}
+.slot-item.selected .time {
+  color: black;
+  font-weight: bold;
+}
+.slot-item.selected .availability {
+  color: black;
+}
+.btn-reserve {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 1px solid #00e5ff;
+  letter-spacing: 1px;
+  background-color: #0d0d0d;
+  color: #00e5ff;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 12px;
+  box-shadow: 0 0 8px #00e5ff55;
+}
+.btn-reserve:hover {
+  box-shadow: 0 0 10px #00e5ffcc;
+  transform: translateY(-2px);
 }
 @media (max-width: 768px) {
   .selection-date {

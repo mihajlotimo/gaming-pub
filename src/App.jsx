@@ -9,6 +9,8 @@ import Reservation from "./pages/Reservation/Reservation.jsx";
 import Prices from "./pages/Prices/Prices.jsx";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 import Login from "./components/Login/Login.jsx";
+import EditProfile from "./pages/EditProfile/EditProfile.jsx";
+import Reservations from "./pages/Reservations/Reservations.jsx";
 
 const App = () => {
   const [menu, setMenu] = useState("pocetna");
@@ -34,9 +36,17 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home setMenu={setMenu} />} />
           <Route path="/igre" element={<Games />} />
-          <Route path="/rezervacija" element={<Reservation />} />
+          <Route path="/rezervacija" element={<Reservation user={user} />} />
           <Route path="/cene" element={<Prices setMenu={setMenu} />} />
           <Route path="/onama" element={<About setMenu={setMenu} />} />
+          <Route
+            path="/urediprofil"
+            element={<EditProfile user={user} setUser={setUser} />}
+          />
+          <Route
+            path="/mojerezervacije"
+            element={<Reservations user={user} />}
+          />
         </Routes>
       </div>
       <Footer menu={menu} setMenu={setMenu} />

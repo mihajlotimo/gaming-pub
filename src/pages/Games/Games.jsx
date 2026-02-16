@@ -32,6 +32,7 @@ const Games = () => {
       {/*<h2>Popularne igre</h2>*/}
       <div className="games-display-list">
         {games.map((item, index) => {
+          console.log(item.image);
           return (
             <GameItem
               key={index}

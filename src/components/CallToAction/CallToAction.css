@@ -34,7 +34,7 @@
   box-shadow: 0 0 8px #00e5ff55;
 }
 .call-to-action button:hover {
-  box-shadow: 0 0 18px #00e5ffcc;
+  box-shadow: 0 0 10px #00e5ffcc;
   transform: translateY(-2px);
 }
 @media (max-width: 768px) {
